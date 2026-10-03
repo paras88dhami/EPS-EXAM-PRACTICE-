@@ -1,48 +1,32 @@
 # EPS Exam Practice
 
-Flutter application for EPS-TOPIK reading and listening exam practice.
+Flutter EPS-TOPIK reading and listening practice application.
 
 ## Phase 1
-- Feature-first clean architecture
-- Riverpod application root
-- GoRouter navigation
-- Material 3 theme
-- Splash and Home foundations
-- Shared reusable widgets
-- Development/production environment foundation
-- Static analysis, widget test and GitHub Actions CI
+Feature-first architecture, Riverpod, GoRouter, Material 3, splash/home, tests and CI.
 
-## Architecture
-```text
-lib/
-├── app/
-│   ├── router/
-│   └── theme/
-├── core/
-│   ├── config/
-│   ├── constants/
-│   └── errors/
-├── features/
-│   ├── splash/
-│   └── home/
-└── shared/
-    └── widgets/
-```
-
-Future features can own data/, domain/, and presentation/ layers when needed.
+## Phase 2
+- Supabase configuration via dart-define
+- Email/password auth repository and UI
+- Dynamic published exam-set list
+- Exam/question schema
+- Row Level Security
+- Automatic user profiles
+- Setup documentation
 
 ## Run
-```bash
-flutter pub get
-flutter run
-```
-
-If native platform folders are not present after cloning this foundation branch, generate Android once:
 ```bash
 flutter create . --platforms=android
 flutter pub get
 flutter run
 ```
 
-## Planned phases
-Phase 2 adds Supabase auth and remote exam-set architecture. Later phases add the exam engine, media/listening, ads/free-attempt gating, offline support, and finally eSewa subscription payments.
+With Supabase:
+```bash
+flutter run --dart-define=SUPABASE_URL=https://YOUR_PROJECT.supabase.co --dart-define=SUPABASE_ANON_KEY=YOUR_CLIENT_KEY
+```
+
+See `docs/SUPABASE_SETUP.md`.
+
+## Next
+Phase 3 builds the 40-question reading/listening exam engine and migrates EPS-TEST content. Ads, offline support and eSewa remain later phases.
